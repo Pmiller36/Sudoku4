@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Slot
+    public class Slot
     {
         public int num;
         public int pos;
-        Slot temp = new Slot(0, 0);
+        Slot temp;
+
 
         public Slot(int number, int position)
         {
@@ -27,13 +28,14 @@ namespace ConsoleApplication1
             pos = position;
         }
 
-        //public void createblankpuzzle()
-        //{
-        //    for (int i = 0; i < 81; i++)
-        //    {
-        //        temp = new slot((i + 1) % 9, i);
-        //    }
-        //}
+        public void CreateBlankPuzzle(List<Slot> slotList)
+        {
+            for (int i = 0; i < 81; i++)
+            {
+                temp = new Slot((i % 9) + 1, i);
+                slotList.Add(temp);
+            }
+        }
 
 
     }
