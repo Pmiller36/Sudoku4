@@ -36,7 +36,13 @@ namespace ConsoleApplication1
                 slotList.Add(temp);
             }
         }
+        public List<Slot> solveRowsAndColumns(List<Slot> listBeforeSolve)
+        {
+            List<Slot> newList = new List<Slot>();
+            newList.Add(new Slot(0, 0));
 
+            return newList;
+        }
 
     }
 }
