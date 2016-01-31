@@ -16,7 +16,7 @@ namespace ConsoleApplication1
         {
             Slot tempMain = new Slot(0, 0);
             Slot tempAdd = new Slot(0, 0);
-            string directoryForPuzzle = "%%/ConsoleApplication1/ConsoleApplication1/bin/Debug/Sudoku Test 5.txt";
+            string directoryForPuzzle = "ConsoleApplication1/ConsoleApplication1/bin/Debug/Sudoku Test X.txt";
             int totalPrinted = 0;
             List<Slot> sampleSlotList = new List<Slot>();
             List<Slot> actualPuzzle = new List<Slot>();
@@ -24,6 +24,8 @@ namespace ConsoleApplication1
             string actualNumbersRead = "";
             List<Slot> puzzleSolution = new List<Slot>();
             int errors = 0;
+            int puzzleInput;
+            puzzleInput = 5;
 
             //puzzle string sets
             string set1, set2, set3, set4, set5, set6, set7, set8, set9;
@@ -32,7 +34,12 @@ namespace ConsoleApplication1
             //solution string sets
             string set1s, set2s, set3s, set4s, set5s, set6s, set7s, set8s, set9s;
             set1s = set2s = set3s = set4s = set5s = set6s = set7s = set8s = set9s = "";
-            
+
+
+            Console.WriteLine("Welcome to Sudoku Solver!!!" + "\n\n" + "Please put your puzzle at: \n" + "\"" + directoryForPuzzle + "\""
+                + "\n \n" + "And place your solution at: \n" + "\"" + "ConsoleApplication1/ConsoleApplication1/bin/Debug/Sudoku Test X Solution.txt" + "\", \n Where X is the number you desire.");
+            Console.Write("\n \n \n Input a puzzle/solution number to begin: ");
+            puzzleInput = Int32.Parse(Console.ReadLine());
             
 
             try
@@ -41,7 +48,7 @@ namespace ConsoleApplication1
                 //{
                 //    actualNumbersRead = sr.ReadToEnd();
                 //}
-                using (StreamReader sr = new StreamReader("Sudoku Test 5.txt"))
+                using (StreamReader sr = new StreamReader("Sudoku Test " + puzzleInput + ".txt"))
                 {
                     set1 = sr.ReadLine();
                     set2 = sr.ReadLine();
@@ -53,7 +60,7 @@ namespace ConsoleApplication1
                     set8 = sr.ReadLine();
                     set9 = sr.ReadLine();
                 }
-                using (StreamReader sr = new StreamReader("Sudoku Test 5 solution.txt"))
+                using (StreamReader sr = new StreamReader("Sudoku Test " + puzzleInput + " solution.txt"))
                 {
                     set1s = sr.ReadLine();
                     set2s = sr.ReadLine();
@@ -280,7 +287,7 @@ namespace ConsoleApplication1
 
             tempMain.CreateBlankPuzzle(sampleSlotList);
 
-            Console.WriteLine("Welcome to Sudoku Solver!!! Below is a Sample puzzle. " + "\n" + "Please enter your puzzle at: \n" + "\"" + directoryForPuzzle + "\"");
+            
 
             foreach (Slot s in actualPuzzle)
             {
