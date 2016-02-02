@@ -38,7 +38,7 @@ namespace ConsoleApplication1
 
             Console.WriteLine("Welcome to Sudoku Solver!!!" + "\n\n" + "Please put your puzzle at: \n" + "\"" + directoryForPuzzle + "\""
                 + "\n \n" + "And place your solution at: \n" + "\"" + "ConsoleApplication1/ConsoleApplication1/bin/Debug/Sudoku Test X Solution.txt" + "\", \n Where X is the number you desire.");
-            Console.Write("\n \n \n Input a puzzle/solution number to begin: ");
+            Console.Write("\n \n \n Input a puzzle/solution number to begin, or enter 5 for a demo: ");
             puzzleInput = Int32.Parse(Console.ReadLine());
             
 
@@ -316,6 +316,8 @@ namespace ConsoleApplication1
                     Console.WriteLine("_______________________");
                 }
             }
+
+            Console.WriteLine("The puzzle entered is above. Press enter for more information.");
 
             Console.ReadLine();
 

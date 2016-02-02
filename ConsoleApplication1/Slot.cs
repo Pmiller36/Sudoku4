@@ -156,7 +156,7 @@ namespace ConsoleApplication1
                 }
             }
         }
-        public List<Slot> SolveRowsAndColumns(List<Slot> listBeforeSolve)
+        public List<Slot> Solve(List<Slot> listBeforeSolve)
         {
             List<Slot> newList = new List<Slot>();
             newList = listBeforeSolve;
@@ -293,7 +293,7 @@ namespace ConsoleApplication1
 
             while (NumbersMissing(slotList) > 0)
             {
-                SolveRowsAndColumns(slotList);
+                Solve(slotList);
                 PrintPuzzle(slotList);
 
                 if (NumbersMissing(slotList) > 0)
